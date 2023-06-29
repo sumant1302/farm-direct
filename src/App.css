@@ -1,38 +1,380 @@
-.App {
-  text-align: center;
+* {
+	box-sizing: border-box;
+}
+html {
+	min-height: 100%;
+}
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+		Verdana, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* //Styling the navbar */
+.div-navbar {
+	position: relative;
+	display: inline-flex;
+	width: 100%;
+	height: 80px;
+	background-color: aqua;
+}
+.nav-logo {
+	max-width: 150px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 20%;
+	height: 80%;
+}
+.home-deliver-addr {
+	color: #282c34;
+}
+.navbar-ul {
+	display: flex;
+	list-style: none;
+	position: absolute;
+	right: 10px;
+  width: 75%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+}
+.navbar-ul li {
+	margin: 1%;
+	padding: 1%;
+	color: white;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+.navbar-ul a {
+	padding: 5px;
+	color: #fff;
+	font-style: bold;
+	text-decoration: none;
+}
+.nav-cart {
+	display: flex;
+	position: relative;
+}
+.badge {
+	background-color: red;
+	position: absolute;
+	margin: 0;
+	padding: 4px;
+	right: 0;
+	top: -10px;
+	border: none;
+}
+h6 {
+	padding: 4px;
+}
+.material-symbols-outlined {
+	font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+.material-symbols-outlined {
+	color: black;
+	font-size: 2.5rem;
+}
+.search-input {
+	width: 300px;
+	height: 40px;
+	font-size: 1rem;
+	outline: none;
+	border-radius: 5px;
+}
+@media screen and (max-width: 1000px) {
+	.search-input {
+		display: none;
+	}
+}
+.delivery-address-home {
+	border: 1px solid grey;
+}
+.delivery-address-home p {
+	padding: 0;
+	margin: 0;
+	font-size: 0.9rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.home-slider {
+	height: 500px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	margin: 20px auto;
+	border: 2px solid;
+}
+.slider-image {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.slider-image img {
+	width: 100%;
+	height: 100%;
+}
+/* .rsis-image{
+  height: 400px !important;
+}
+.rsis-container{
+  height: 400px !important;
+} */
+
+/* Login form */
+.div-login {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 8vw;
+	align-items: center;
+}
+.login-form {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.login-form > * {
+	margin: 10px;
+	padding: 5px;
+	font-size: 1.2rem;
+}
+.input-login {
+	width: 100%;
+	line-height: 40px;
+	border: 2px solid;
+	border-radius: 2px;
+}
+.login-button {
+	width: 200px;
+	height: 50px;
+	font-size: 1.3rem;
+	background: limegreen;
+	color: white;
+	font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Product Page */
+.products-container {
+	display: flex;
+	width: 100%;
+}
+.products-filters {
+	width: 30%;
+	margin: 5px;
+	padding: 5px;
+	height: fit-content;
+	border: 1px solid black;
+}
+.products-view {
+	width: 70%;
 }
 
-.App-link {
-  color: #61dafb;
+.product-list {
+	display: flex;
+	list-style: none;
+}
+.product-list li {
+}
+.div-products a {
+	text-decoration: none;
+	color: inherit;
+}
+.product-card {
+	border: 2px solid;
+	display: flex;
+	height: fit-content;
+	margin: 5px;
+}
+.product-card > * {
+	margin: 10px;
+}
+.p-image {
+	width: 40%;
+}
+.p-card-info {
+	width: 60%;
+	text-align: left;
+	position: relative;
+}
+.p-image img {
+	width: 100%;
+	max-height: 200px;
+}
+button.add-to-cart {
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+	background: lawngreen;
+	border: 0;
+	width: fit-content;
+	height: 40px;
+	color: black;
+	font-size: 1.2rem;
+	font-weight: 500;
+	border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quantityButton {
+	display: flex;
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+	background: white;
+	border: 1px solid grey;
+	width: 24%;
+	height: 40px;
+	color: black;
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+.quantityButton input {
+	width: 60%;
+	text-align: center;
+	border: 0;
+	outline: 0;
+}
+
+.quantityButton button {
+	width: 20%;
+	background: white;
+	border: none;
+	outline: none;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.prod-price {
+	font-size: 1.5rem;
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+}
+/* View Product Page */
+.div-view-product {
+	display: inline-flex;
+}
+.product-details {
+	display: flex;
+	flex-direction: column;
+	align-content: stretch;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	text-align: start;
+	margin-left: 5%;
+}
+.product-image-view {
+	max-width: 40%;
+	display: flex;
+	justify-content: center;
+	align-content: space-around;
+	align-items: center;
+}
+.product-image-view img {
+	width: 100%;
+	max-height: 80%;
+}
+.add-cart-product {
+	background: lawngreen;
+	border: 0;
+	width: 40%;
+	height: 40px;
+	color: black;
+	font-size: 1.2rem;
+	font-weight: 500;
+	border-radius: 5px;
+}
+.buy-now {
+	background: rgb(239, 155, 10);
+	border: 0;
+	width: 40%;
+	height: 40px;
+	color: black;
+	font-size: 1.2rem;
+	font-weight: 500;
+	border-radius: 5px;
+	margin-right: 5%;
+}
+.buttons-add-and-buy {
+	width: 100%;
+}
+/* CSS for Cart */
+.cart-container {
+	margin: 5%;
+	margin-top: 0;
+}
+.cart-container h1 {
+	text-align: center;
+}
+.cart-product-row {
+	display: flex;
+	margin: 2%;
+}
+.calculated-row {
+	display: flex;
+	justify-content: end;
+}
+.calculated-row > * {
+	display: flex;
+	width: 20%;
+	justify-content: end;
+	padding: 5px;
+	justify-content: end;
+}
+.cart-items-header {
+	font-weight: bold;
+}
+
+button.add {
+	width: 30px;
+	height: 30px;
+	background: red;
+	border: none;
+	font-weight: bold;
+	text-align: center;
+	padding: 0;
+	border-radius: 15px;
+}
+/* CSS for Form.js */
+
+.div-inputBox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.input-box {
+	width: 300px;
+	height: 40px;
+	padding: 10px;
+	border: 1px solid #3d3a3a;
+	border-radius: 4px;
+	font-size: 16px;
+	outline: none;
+	margin: 10px;
+}
+
+.input-box:focus {
+	border-color: #4c9aff;
+	box-shadow: 0 0 0 2px rgba(76, 154, 255, 0.2);
+}
+
+.submit-button {
+	display: inline-block;
+	padding: 10px 20px;
+	margin: 10px;
+	background-color: #4c9aff;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+	background-color: #2375d3;
+}
+
+.submit-button:active {
+	background-color: #105aa8;
 }
